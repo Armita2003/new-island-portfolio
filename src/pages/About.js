@@ -21,7 +21,7 @@ const About = () => {
         <Stack className=' bg-gray-100'>
             <Stack className='max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)]'>
                 <h1 className='sm:text-5xl text-3xl font-semibold sm:leading-snug font-poppins'>
-                    Hello, I'm{" "}
+                    Hello, I´m{" "}
                     <span className='blue-gradient_text font-semibold drop-shadow'>
                         Armita
                     </span>
@@ -42,8 +42,11 @@ const About = () => {
                             My Skills
                         </h3>
                         <Stack className='mt-16 gap-16 flex-row flex-wrap'>
-                            {skills.map((skill) => (
-                                <div className='block-container w-20 h-20 '>
+                            {skills.map((skill, index) => (
+                                <div
+                                    key={index}
+                                    className='block-container w-20 h-20 '
+                                >
                                     <div className='btn-back rounded-xl' />
                                     <div className='btn-front rounded-xl justify-center items-center flex'>
                                         <Image
@@ -72,9 +75,9 @@ const About = () => {
                         className='mt-5 flex flex-col  text-slate-500'
                     >
                         <p style={{ maxWidth: "650px" }}>
-                            I've worked with great companies, leveling up my
+                            I´ve worked with great companies, leveling up my
                             skills and teaming up with smart and amazing people.
-                            Here's the rundown:
+                            Here´s the rundown:
                         </p>
                     </Stack>
                     <Stack className='mt-12 flex'>
@@ -85,7 +88,7 @@ const About = () => {
                                     date={exprience.date}
                                     icon={
                                         <Stack className='justify-center items-center w-full h-full'>
-                                            <img
+                                            <Image
                                                 src={
                                                     index === 0
                                                         ? CompanyLogo[0]
@@ -94,6 +97,8 @@ const About = () => {
                                                 alt={exprience.company_name}
                                                 className=' object-contain w-[60%] h-[60%] '
                                                 style={{ borderRadius: 5 }}
+                                                width={25}
+                                                height={25}
                                             />
                                         </Stack>
                                     }
